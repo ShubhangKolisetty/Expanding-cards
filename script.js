@@ -1,5 +1,16 @@
 const btn = document.querySelectorAll(".panel");
 
-// btn.addEventListener("click", function () {
-//   console.log("clicked");
-// });
+console.log(btn);
+
+function removeActiveClasses() {
+  btn.forEach((el) => {
+    el.classList.remove("active");
+  });
+}
+
+btn.forEach((el) => {
+  el.addEventListener("click", () => {
+    removeActiveClasses();
+    el.classList.add("active");
+  });
+});
